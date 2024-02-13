@@ -25,24 +25,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Map<String, dynamic>> _pages = [
     {
-      'color': '#ffe24e',
-      'title': 'Hmmm, Healthy food',
-      'image': 'assets/images/image1.png',
-      'description': "A variety of foods made by the best chef. Ingredients are easy to find, all delicious flavors can only be found at cookbunda",
+      'title': 'Choose Product',
+      'image': 'assets/onboarding/onboarding_screen_1.png',
+      'description': "A product is the item offered for sale.A product can be a service or an item.It can be physical or in virtual or cyber form",
       'skip': true
     },
     {
-      'color': '#a3e4f1',
-      'title': 'Fresh Drinks, Stay Fresh',
-      'image': 'assets/images/image2.png',
-      'description': 'Not all food, we provide clear healthy drink options for you. Fresh taste always accompanies you',
+      'title': 'Make Payment',
+      'image': 'assets/onboarding/onboarding_screen_2.png',
+      'description': 'Payment is the transfer of money service in exchange product or Payments typically made terms agreed',
       'skip': true
     },
     {
-      'color': '#31b77a',
-      'title': 'Let\'s Cooking',
-      'image': 'assets/images/image3.png',
-      'description': 'Are you ready to make a dish for your friends or family? create an account and cooks',
+      'title': 'Get Your Order',
+      'image': 'assets/onboarding/onboarding_screen_3.png',
+      'description': 'Business or commence an order is a stated intention either spoken to engage in a commercial transaction specific products',
       'skip': false
     },
   ];
@@ -64,7 +61,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               itemBuilder: (BuildContext context, int index){
                 return OnboardingWidget(
                   index: index,
-                  color: _pages[index]['color'],
                   title: _pages[index]['title'],
                   description: _pages[index]['description'],
                   image: _pages[index]['image'],

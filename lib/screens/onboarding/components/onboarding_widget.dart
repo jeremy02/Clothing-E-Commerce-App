@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
     super.key,
-    required this.color,
     required this.title,
     required this.description,
     required this.skip,
@@ -13,7 +12,6 @@ class OnboardingWidget extends StatelessWidget {
     required this.index,
   });
 
-  final String color;
   final String title;
   final String description;
   final bool skip;
@@ -51,7 +49,7 @@ class OnboardingWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                          image: DecorationImage(
                             image: AssetImage(
-                              'assets/onboarding/onboarding_screen_1.png',
+                              image,
                             ),
                             fit: BoxFit.fill
                          ),
