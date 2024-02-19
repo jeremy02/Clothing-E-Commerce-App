@@ -1,6 +1,3 @@
-import 'package:clothing_e_commerce_app/screens/login/login_screen.dart';
-import 'package:clothing_e_commerce_app/screens/onboarding/onboarding_screen.dart';
-import 'package:clothing_e_commerce_app/screens/splash_screen.dart';
 import 'package:clothing_e_commerce_app/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Ecommerce Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
