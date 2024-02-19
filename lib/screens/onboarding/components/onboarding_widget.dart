@@ -11,6 +11,7 @@ class OnboardingWidget extends StatelessWidget {
     required this.onboardingPage,
     required this.canSkip,
     required this.onTab,
+    required this.skipOnboarding,
   });
 
   final int index;
@@ -18,6 +19,7 @@ class OnboardingWidget extends StatelessWidget {
   final OnboardingPage onboardingPage;
   final bool canSkip;
   final VoidCallback onTab;
+  final VoidCallback skipOnboarding;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +42,7 @@ class OnboardingWidget extends StatelessWidget {
             top: appBarHeight,
             right: 16,
             child: GestureDetector(
-              onTap: () {
-                print('On Skip Text Clicked!');
-              },
+              onTap: skipOnboarding,
               child: const Text(
                 'Skip',
                 style: TextStyle(

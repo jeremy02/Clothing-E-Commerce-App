@@ -16,8 +16,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final OnboardingPagesController onboardingPagesController = Get.put(OnboardingPagesController());
 
+  // Skip to login screen if your are on the last onboarding item else go to next onboarding item
   void onNextPage() {
-    onboardingPagesController.onNextPage();
+    if(onboardingPagesController.activePage.value != onboardingPagesController.onboardingPageItems.length - 1) {
+      onboardingPagesController.onNextPage();
+    } else {
+      skipOnboarding();
+    }
+  }
+
+  void skipOnboarding() {
+    // Navigator.pushNamed(context, '/login');
+    Navigator.of(context).pushReplacementNamed('/login');
   }
 
   @override
@@ -35,15 +45,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onboardingPagesController.updateActivePage(page);
               },
               itemBuilder: (BuildContext context, int index){
-
                 final OnboardingPage onboardingPage = onboardingPages[index];
-
                 return OnboardingWidget(
                   index: index,
                   totalIndexes: onboardingPages.length,
                   onboardingPage: onboardingPage,
                   canSkip: index != (onboardingPages.length - 1),
                   onTab: onNextPage,
+                  skipOnboarding: skipOnboarding,
                 );
               }
           ),

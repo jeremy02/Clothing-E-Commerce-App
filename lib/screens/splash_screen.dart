@@ -1,4 +1,3 @@
-import 'package:clothing_e_commerce_app/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,9 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _mockAsyncInit().then((_) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-      );
+      Navigator.of(context).pushReplacementNamed('/onboarding');
     });
   }
 
