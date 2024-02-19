@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:clothing_e_commerce_app/utils/app_utils.dart';
+import 'package:flutter/material.dart';
 
 class OnboardingButton extends StatelessWidget {
   const OnboardingButton({

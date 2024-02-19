@@ -86,7 +86,7 @@ class OnboardingWidget extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        margin: EdgeInsets.symmetric(
+        margin: const EdgeInsets.symmetric(
             horizontal: 32.0
         ),
         decoration: BoxDecoration(
