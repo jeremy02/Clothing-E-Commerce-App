@@ -1,4 +1,5 @@
 import 'package:clothing_e_commerce_app/screens/onboarding/components/onboarding_button.dart';
+import 'package:clothing_e_commerce_app/screens/onboarding/components/onboarding_number_widget.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingWidget extends StatelessWidget {
@@ -10,6 +11,7 @@ class OnboardingWidget extends StatelessWidget {
     required this.image,
     required this.onTab,
     required this.index,
+    required this.totalIndexes,
   });
 
   final String title;
@@ -18,6 +20,7 @@ class OnboardingWidget extends StatelessWidget {
   final String image;
   final VoidCallback onTab;
   final int index;
+  final int totalIndexes;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +31,15 @@ class OnboardingWidget extends StatelessWidget {
       color: Colors.white,
       child: Stack(
         children: [
+          Positioned(
+            top: appBarHeight,
+            right: 0,
+            left: 16,
+            child: OnboardingNumberWidget(
+              currentIndex: index + 1,
+              totalIndexes: totalIndexes,
+            ),
+          ),
           Positioned(
             top: appBarHeight * 2,
             right: 0,

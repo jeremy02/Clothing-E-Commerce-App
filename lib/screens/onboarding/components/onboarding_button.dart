@@ -25,8 +25,8 @@ class OnboardingButton extends StatelessWidget {
       ),
       onPressed: () { },
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 48.0,
+        padding: EdgeInsets.symmetric(
+            horizontal: skip ? 48.0 : 36.0,
             vertical: 16.0
         ),
         child: Row(
@@ -35,7 +35,7 @@ class OnboardingButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              'Next',
+              skip ? 'Next' : 'Get Started',
               style: TextStyle(
                 fontSize: 20,
               ),
@@ -45,34 +45,24 @@ class OnboardingButton extends StatelessWidget {
             ),
             Row(
               children: [
-                Align(
-                  widthFactor: 0.35,
-                  child: Icon(
-                    Icons.keyboard_arrow_right_sharp,
-                    size: 28.0,
-                    color: Colors.white.withOpacity(index == 0 ? 1.0 : 0.5),
-                  ),
-                ),
-                Align(
-                  widthFactor: 0.35,
-                  child: Icon(
-                    Icons.keyboard_arrow_right_sharp,
-                    size: 28.0,
-                    color: Colors.white.withOpacity(index == 1 ? 1.0 : 0.5),
-                  ),
-                ),
-                Align(
-                  widthFactor: 0.35,
-                  child: Icon(
-                    Icons.keyboard_arrow_right_sharp,
-                    color: Colors.white.withOpacity(index == 2 ? 1.0 : 0.5),
-                    size: 28.0,
-                  ),
-                ),
+                _buildArrowForwardWidget(0),
+                _buildArrowForwardWidget(1),
+                _buildArrowForwardWidget(2),
               ],
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildArrowForwardWidget(int compareIndex) {
+    return Align(
+      widthFactor: 0.35,
+      child: Icon(
+        Icons.keyboard_arrow_right_sharp,
+        size: 28.0,
+        color: Colors.white.withOpacity(index == compareIndex ? 1.0 : 0.5),
       ),
     );
   }

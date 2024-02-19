@@ -61,6 +61,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               itemBuilder: (BuildContext context, int index){
                 return OnboardingWidget(
                   index: index,
+                  totalIndexes: _pages.length,
                   title: _pages[index]['title'],
                   description: _pages[index]['description'],
                   image: _pages[index]['image'],
