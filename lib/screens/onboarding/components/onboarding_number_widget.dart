@@ -17,14 +17,14 @@ class OnboardingNumberWidget extends StatelessWidget {
         style: DefaultTextStyle.of(context).style,
         children: <TextSpan>[
           TextSpan(
-            text: '${currentIndex}',
-            style: TextStyle(
+            text: '$currentIndex',
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,
               color: Colors.black,
             ),
           ),
-          TextSpan(
+          const TextSpan(
             text: '/',
             style: TextStyle(
               fontSize: 20,
@@ -33,7 +33,7 @@ class OnboardingNumberWidget extends StatelessWidget {
             ),
           ),
           TextSpan(
-            text: '${totalIndexes}',
+            text: '$totalIndexes',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,

@@ -17,8 +17,8 @@ class OnboardingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: AppUtils.hexToColor("#F67952"),
-        onPrimary: Colors.white,
+        backgroundColor: AppUtils.hexToColor("#F67952"),
+        foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(36.0),
         ),
@@ -36,11 +36,11 @@ class OnboardingButton extends StatelessWidget {
           children: [
             Text(
               canSkip ? 'Next' : 'Get Started',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 6.0,
             ),
             Row(

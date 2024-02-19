@@ -1,3 +1,4 @@
+import 'package:clothing_e_commerce_app/models/onboarding_page.dart';
 import 'package:clothing_e_commerce_app/screens/onboarding/components/onboarding_button.dart';
 import 'package:clothing_e_commerce_app/screens/onboarding/components/onboarding_number_widget.dart';
 import 'package:flutter/material.dart';
@@ -5,22 +6,18 @@ import 'package:flutter/material.dart';
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({
     super.key,
-    required this.title,
-    required this.description,
-    required this.canSkip,
-    required this.image,
-    required this.onTab,
     required this.index,
     required this.totalIndexes,
+    required this.onboardingPage,
+    required this.canSkip,
+    required this.onTab,
   });
 
-  final String title;
-  final String description;
-  final bool canSkip;
-  final String image;
-  final VoidCallback onTab;
   final int index;
   final int totalIndexes;
+  final OnboardingPage onboardingPage;
+  final bool canSkip;
+  final VoidCallback onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,7 @@ class OnboardingWidget extends StatelessWidget {
               onTap: () {
                 print('On Skip Text Clicked!');
               },
-              child: Text(
+              child: const Text(
                 'Skip',
                 style: TextStyle(
                   fontSize: 20,
@@ -92,7 +89,7 @@ class OnboardingWidget extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                image,
+                onboardingPage.image,
               ),
               fit: BoxFit.fill
           ),
@@ -112,7 +109,7 @@ class OnboardingWidget extends StatelessWidget {
             height: 62,
           ),
           Text(
-            title,
+            onboardingPage.title,
             maxLines: 1,
             style: const TextStyle(
               fontSize: 22,
@@ -122,7 +119,7 @@ class OnboardingWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16,),
           Text(
-            description,
+            onboardingPage.description,
             maxLines: 3,
             style: const TextStyle(
               fontSize: 16,

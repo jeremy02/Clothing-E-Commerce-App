@@ -41,9 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 return OnboardingWidget(
                   index: index,
                   totalIndexes: onboardingPages.length,
-                  title: onboardingPage.title,
-                  description: onboardingPage.description,
-                  image: onboardingPage.image,
+                  onboardingPage: onboardingPage,
                   canSkip: index != (onboardingPages.length - 1),
                   onTab: onNextPage,
                 );
