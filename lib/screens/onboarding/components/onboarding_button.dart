@@ -4,12 +4,12 @@ import 'package:clothing_e_commerce_app/utils/app_utils.dart';
 class OnboardingButton extends StatelessWidget {
   const OnboardingButton({
     super.key,
-    required this.skip,
+    required this.canSkip,
     required this.onTab,
     required this.index,
   });
 
-  final bool skip;
+  final bool canSkip;
   final VoidCallback onTab;
   final int index;
 
@@ -23,10 +23,10 @@ class OnboardingButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(36.0),
         ),
       ),
-      onPressed: () { },
+      onPressed: onTab,
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: skip ? 48.0 : 36.0,
+            horizontal: canSkip ? 48.0 : 36.0,
             vertical: 16.0
         ),
         child: Row(
@@ -35,7 +35,7 @@ class OnboardingButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              skip ? 'Next' : 'Get Started',
+              canSkip ? 'Next' : 'Get Started',
               style: TextStyle(
                 fontSize: 20,
               ),

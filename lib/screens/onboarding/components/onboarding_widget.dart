@@ -7,7 +7,7 @@ class OnboardingWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    required this.skip,
+    required this.canSkip,
     required this.image,
     required this.onTab,
     required this.index,
@@ -16,7 +16,7 @@ class OnboardingWidget extends StatelessWidget {
 
   final String title;
   final String description;
-  final bool skip;
+  final bool canSkip;
   final String image;
   final VoidCallback onTab;
   final int index;
@@ -103,7 +103,7 @@ class OnboardingWidget extends StatelessWidget {
                 const SizedBox(
                   height: 32,
                 ),
-                OnboardingButton(skip: skip, onTab: onTab, index: index),
+                OnboardingButton(canSkip: canSkip, onTab: onTab, index: index),
               ],
             ),
           ),

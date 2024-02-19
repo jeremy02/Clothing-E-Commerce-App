@@ -65,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   title: _pages[index]['title'],
                   description: _pages[index]['description'],
                   image: _pages[index]['image'],
-                  skip: _pages[index]['skip'],
+                  canSkip: index != (_pages.length - 1),
                   onTab: onNextPage,
                 );
               }
