@@ -33,12 +33,28 @@ class OnboardingWidget extends StatelessWidget {
         children: [
           Positioned(
             top: appBarHeight,
-            right: 0,
             left: 16,
             child: OnboardingNumberWidget(
               currentIndex: index + 1,
               totalIndexes: totalIndexes,
             ),
+          ),
+          Positioned(
+            top: appBarHeight,
+            right: 16,
+            child: GestureDetector(
+              onTap: () {
+                print('On Skip Text Clicked!');
+              },
+              child: Text(
+                'Skip',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                ),
+              ),
+            )
           ),
           Positioned(
             top: appBarHeight * 2,
@@ -51,61 +67,69 @@ class OnboardingWidget extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 32.0
-                      ),
-                      decoration: BoxDecoration(
-                         image: DecorationImage(
-                            image: AssetImage(
-                              image,
-                            ),
-                            fit: BoxFit.fill
-                         ),
-                      ),
-                    ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                  ),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 62,
-                      ),
-                      Text(
-                        title,
-                        maxLines: 1,
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      const SizedBox(height: 16,),
-                      Text(
-                        description,
-                        maxLines: 3,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          height: 1.5,
-                          color: Colors.grey,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
+                _buildImageWidget(),
+                _buildTitleDescriptionTextWidget(),
                 const SizedBox(
                   height: 32,
                 ),
                 OnboardingButton(canSkip: canSkip, onTab: onTab, index: index),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildImageWidget() {
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        margin: EdgeInsets.symmetric(
+            horizontal: 32.0
+        ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                image,
+              ),
+              fit: BoxFit.fill
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTitleDescriptionTextWidget() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 62,
+          ),
+          Text(
+            title,
+            maxLines: 1,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16,),
+          Text(
+            description,
+            maxLines: 3,
+            style: const TextStyle(
+              fontSize: 16,
+              height: 1.5,
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

@@ -37,7 +37,7 @@ class OnboardingNumberWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,
-              color: Colors.grey,
+              color: currentIndex == totalIndexes ? Colors.black : Colors.grey,
             ),
           ),
         ],
