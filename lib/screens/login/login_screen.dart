@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                   horizontalPadding: 56.0,
               ),
               const SizedBox(
-                height: 40,
+                height: 36,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                       color: AppUtils.hexToColor("#232E24"),
                       indent: 48,
                       endIndent: 20,
-                      height: 1.0,
+                      height: 0.5,
                     ),
                   ),
                   Text(
@@ -119,11 +119,59 @@ class LoginScreen extends StatelessWidget {
                       color: AppUtils.hexToColor("#232E24"),
                       indent: 20,
                       endIndent: 48,
-                      height: 1.0,
+                      height: 0.5,
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 36,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    elevation: 0.0,
+                    focusElevation: 0.0,
+                    hoverElevation: 0.0,
+                    highlightElevation: 0.0,
+                    onPressed: () {},
+                    shape: const CircleBorder(),
+                    color: Colors.white.withOpacity(0.6),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Ink.image(
+                        image: const AssetImage("assets/auth/icon_facebook.png"),
+                        fit: BoxFit.cover,
+                        width: 36.0,
+                        height: 36.0,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  MaterialButton(
+                    elevation: 0.0,
+                    focusElevation: 0.0,
+                    hoverElevation: 0.0,
+                    highlightElevation: 0.0,
+                    onPressed: () {},
+                    shape: const CircleBorder(),
+                    color: Colors.white.withOpacity(0.6),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Ink.image(
+                        image: const AssetImage("assets/auth/icon_google.png"),
+                        fit: BoxFit.cover,
+                        width: 36.0,
+                        height: 36.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
