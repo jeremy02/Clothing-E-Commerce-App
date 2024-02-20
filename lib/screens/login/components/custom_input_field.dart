@@ -19,7 +19,7 @@ class CustomInputField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
+        color: Colors.white.withOpacity(0.75),
         borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
           color: Colors.transparent,
