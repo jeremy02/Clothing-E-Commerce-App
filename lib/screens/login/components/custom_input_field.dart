@@ -8,16 +8,17 @@ class CustomInputField extends StatelessWidget {
   final TextInputType keyboardType;
 
   const CustomInputField({
-    super.key,
+    Key? key,
     required this.hintText,
     required this.imageIconPath,
-    required this.obscureText, required this.keyboardType
-  });
+    required this.obscureText,
+    required this.keyboardType,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.75),
         borderRadius: BorderRadius.circular(12.0),
@@ -30,7 +31,7 @@ class CustomInputField extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
               color: Colors.red.withOpacity(0.15),
               borderRadius: BorderRadius.circular(12.0),

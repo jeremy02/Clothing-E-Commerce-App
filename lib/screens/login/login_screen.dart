@@ -1,6 +1,10 @@
 import 'package:clothing_e_commerce_app/screens/login/components/custom_input_field.dart';
+import 'package:clothing_e_commerce_app/screens/login/components/horizontal_divider_or_text_widget.dart';
+import 'package:clothing_e_commerce_app/screens/login/components/login_signup_text_widget.dart';
 import 'package:clothing_e_commerce_app/screens/login/components/rounded_button.dart';
+import 'package:clothing_e_commerce_app/screens/login/components/social_button.dart';
 import 'package:clothing_e_commerce_app/utils/app_utils.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -41,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 maxLines: 1,
                 style: TextStyle(
                   fontSize: 26,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: Colors.black,
                 ),
               ),
@@ -92,38 +96,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 36,
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Divider(
-                      thickness: 1.0,
-                      color: AppUtils.hexToColor("#232E24"),
-                      indent: 48,
-                      endIndent: 20,
-                      height: 0.5,
-                    ),
-                  ),
-                  Text(
-                    "Or",
-                    style: TextStyle(
-                      fontSize: 17,
-                      color: AppUtils.hexToColor("#230A06"),
-                    ),
-                  ),
-                  Expanded(
-                    child: Divider(
-                      thickness: 1.0,
-                      color: AppUtils.hexToColor("#232E24"),
-                      indent: 20,
-                      endIndent: 48,
-                      height: 0.5,
-                    ),
-                  ),
-                ],
-              ),
+              const HorizontalDividerOrTextWidget(),
               const SizedBox(
                 height: 36,
               ),
@@ -131,46 +104,26 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MaterialButton(
-                    elevation: 0.0,
-                    focusElevation: 0.0,
-                    hoverElevation: 0.0,
-                    highlightElevation: 0.0,
+                  SocialButton(
+                    imagePath: "assets/auth/icon_facebook.png",
                     onPressed: () {},
-                    shape: const CircleBorder(),
-                    color: Colors.white.withOpacity(0.6),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Ink.image(
-                        image: const AssetImage("assets/auth/icon_facebook.png"),
-                        fit: BoxFit.cover,
-                        width: 36.0,
-                        height: 36.0,
-                      ),
-                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  MaterialButton(
-                    elevation: 0.0,
-                    focusElevation: 0.0,
-                    hoverElevation: 0.0,
-                    highlightElevation: 0.0,
+                  SocialButton(
+                    imagePath: "assets/auth/icon_google.png",
                     onPressed: () {},
-                    shape: const CircleBorder(),
-                    color: Colors.white.withOpacity(0.6),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Ink.image(
-                        image: const AssetImage("assets/auth/icon_google.png"),
-                        fit: BoxFit.cover,
-                        width: 36.0,
-                        height: 36.0,
-                      ),
-                    ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 36,
+              ),
+              LoginSignupTextWidget(
+                captionText: 'Don\'t have an account? ',
+                clickableText: 'Sign Up',
+                onTap: () {},
               ),
             ],
           ),
