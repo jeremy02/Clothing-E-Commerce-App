@@ -12,7 +12,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _mockAsyncInit().then((_) {
-      Navigator.of(context).pushReplacementNamed('/onboarding');
+      // Navigator.of(context).pushReplacementNamed('/onboarding');
+      Navigator.of(context).pushReplacementNamed('/login');
     });
   }
 
